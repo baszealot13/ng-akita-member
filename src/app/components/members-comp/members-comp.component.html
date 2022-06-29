@@ -1,0 +1,6 @@
+<div class="collection with-header">
+    <h4 class="collection-header">Todos:</h4>
+    <app-member-comp *ngFor="let member of members; trackBy: trackByFn" class="collection-item" 
+        (delete)="delete.emit($event)"
+        (complete)="complete.emit($event)" [member]="member"></app-member-comp>
+</div>

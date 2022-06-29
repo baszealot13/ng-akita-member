@@ -1,0 +1,13 @@
+<div class="flex align-center sb">
+    <div class="flex">
+        <label>
+            <!-- <input type="checkbox" [formControl]="control" name="control"/> -->
+            <input type="checkbox" [(ngModel)]="control" name="control" (change)="controlChange()"/>
+            <span></span>
+        </label>
+        {{member.title}}
+    </div>
+    <button (click)="delete.emit(member.id)">
+        Delete
+    </button>
+</div>
