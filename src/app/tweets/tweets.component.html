@@ -1,0 +1,10 @@
+<div class="container my-4">
+    <div infiniteScroll [infiniteScrollDistance]="0.1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+        <app-tweet-list [tweets]="tweets$ | async"></app-tweet-list>
+    </div>
+    
+    <div class="alert alert-dark" *ngIf="isLoading$ | async">
+        Fetching tweets...
+    </div>
+</div>
+<button class="btn btn-dark btn-options" (click)="onScroll()">Load more</button>
